@@ -1,0 +1,91 @@
+
+  
+  img {
+    width: 400px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #c00; /* Sombra roja */
+  }
+  body {
+    background-color: #fff; /* Blanco */
+    color: #c00; /* Rojo */
+    overflow: hidden; /* Evita que la nieve caiga fuera del área visible */
+   background-image: url(fondo.jpg);
+   background-size: cover;
+  }
+
+
+  .felicitacion {
+    text-align: center;
+    padding: 50px;
+    position: relative ; /* Permite posicionar la nieve sobre la felicitación */
+    z-index: 1; /* Asegura que la felicitación esté sobre la nieve */
+    margin-left: 255px;
+  }
+  
+  .snow {
+    background-image: url('https://www.transparenttextures.com/patterns/snow.png'); /* Patrón de nieve */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Coloca la nieve detrás de la felicitación */
+    pointer-events: none; /* Permite hacer clic a través de la nieve */
+    animation: snow 10s linear infinite; /* Agrega una animación de nieve cayendo */
+  }
+  
+  @keyframes snow {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px; }
+    100% { background-position: 500px 1000px, 400px 400px, 300px 300px, 200px 200px; }
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+   
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center;
+     border-radius: 10px;
+        box-shadow: 0 9px 15px 0 rgba(2, 70, 2, 0.2);
+  }
+  @media screen and (max-width: 720px) {
+    img {
+      width: 200px;
+    }
+    body{
+      background-size: auto;
+    }
+    .felicitacion{
+      margin:2rem;
+    }
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Evita barras de desplazamiento */
+  }
+  
+  .purpurina {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/giftly.png'); /* Patrón de purpurina */
+    animation: sparkles 1s linear infinite; /* Animación de destellos */
+  }
+  
+  @keyframes sparkles {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+  }
